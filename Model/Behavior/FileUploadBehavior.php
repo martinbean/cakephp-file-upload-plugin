@@ -77,7 +77,7 @@ class FileUploadBehavior extends ModelBehavior {
         
         $value = $Model->data[$Model->alias][$field];
         
-        if (!empty($value)) {
+        if (!empty($value['tmp_name'])) {
             $Model->data[$Model->alias][$field] = $this->moveUploadedFile($Model, $value);
         }
         else {
